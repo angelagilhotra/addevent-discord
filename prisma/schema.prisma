@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Event {
+  id            String   @unique
+  title         String
+  description   String
+  location      String
+  organizer     String
+  dateStart     String
+  dateStartTime String
+  dateStartAmPm String
+  dateStartUnix DateTime
+  dateFormat    String
+  timezone      String
+  link          String
+  calendarId    String
+  postOnDiscord Boolean? @default(false)
+}
+
+model Timezones {
+  id Int @unique
+  label String
+  gmtOffset String
+  gmtDiff String
+  abbr String
+  offset String
+  offsetNumber Int
+  offsetSymbol String
+}
