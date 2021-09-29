@@ -1,5 +1,6 @@
 ### Usage
-Runs every hour (or as set in config), to post events coming up in the next hour on a channel in discord
+- Runs every hour (or as set in config), to post events coming up in the next hour on a channel in discord
+- supports 1 addEvent calendar, 1 discord channel
 
 ### Setup
 ```

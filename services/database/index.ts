@@ -1,17 +1,24 @@
 import prisma from './client';
 import * as Config from '../../config/index.json';
 
+export const markAsPosted = (id: string) => {
+  return prisma.event.update({
+    where: { id },
+    data: { postOnDiscord: true }
+  })
+}
+
 // return event object for all events in the next hour
 export const getNextEvent = () => {
   const now = new Date();
-  let thirtyMinutesFromNow: Date = new Date();
-  thirtyMinutesFromNow.setMinutes(thirtyMinutesFromNow.getMinutes() + Config.eventSyncInterval);
+  let xMinutesFromNow: Date = new Date();
+  xMinutesFromNow.setMinutes(xMinutesFromNow.getMinutes() + Config.eventSyncInterval);
   return prisma.event.findMany({
     where: {
       AND: [
         {
           dateStartUnix: {
-            lte: thirtyMinutesFromNow,
+            lte: xMinutesFromNow,
             gte: now
           }
         },
