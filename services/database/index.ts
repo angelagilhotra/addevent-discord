@@ -1,5 +1,5 @@
 import prisma from './client';
-import * as Config from '../../config/index.json';
+import Config from '../../config';
 
 export const markAsPosted = (id: string) => {
   return prisma.event.update({
@@ -12,7 +12,7 @@ export const markAsPosted = (id: string) => {
 export const getNextEvent = () => {
   const now = new Date();
   let xMinutesFromNow: Date = new Date();
-  xMinutesFromNow.setMinutes(xMinutesFromNow.getMinutes() + Config.eventSyncInterval);
+  xMinutesFromNow.setMinutes(xMinutesFromNow.getMinutes() + Number(Config.eventSyncInterval));
   return prisma.event.findMany({
     where: {
       AND: [

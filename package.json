@@ -9,6 +9,7 @@
     "qs": "^6.10.1"
   },
   "devDependencies": {
+    "@types/node": "^16.10.1",
     "@types/qs": "^6.9.7",
     "prisma": "2.30.2",
     "ts-node": "^10.2.1",

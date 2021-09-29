@@ -1,4 +1,4 @@
-import * as Config from '../../config/index.json';
+import Config from '../../config';
 import {generateAddEventAPI} from '../../utils';
 import { getTimezoneOffset } from '../database';
 const { api, defaultParams } = generateAddEventAPI(Config.addEvent.token);

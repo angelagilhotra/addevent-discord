@@ -1,4 +1,4 @@
-import * as Config from '../../config/index.json';
+import Config from '../../config';
 import { generateDiscordAPI } from '../../utils';
 
 const embedImageUrl = "https://gateway.pinata.cloud/ipfs/QmQd5vCAM6xXXy61WLYkFV5oD4TkUVEgn9NQCZwo5Pbymv"

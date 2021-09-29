@@ -4,7 +4,7 @@
  */
 import { fetchAndSyncEvents, fetchAndSyncTimezones, sendDiscordUpdate } from "./scripts";
 import { disconnect, getNextEvent, markAsPosted } from "./services/database";
-import * as Config from './config/index.json';
+import Config from './config';
 
 (async function () {
   // await fetchAndSyncTimezones();
