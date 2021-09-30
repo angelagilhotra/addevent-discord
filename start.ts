@@ -7,7 +7,7 @@ import { disconnect, getNextEvent, markAsPosted } from "./services/database";
 import Config from './config';
 
 (async function () {
-  await fetchAndSyncTimezones();
+  // await fetchAndSyncTimezones();
   await fetchAndSyncEvents();
   // get all events starting in the next hour
   const n = await getNextEvent();
