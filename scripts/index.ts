@@ -21,6 +21,8 @@ export const sendDiscordUpdate = async (channel, event) => {
     channel,
     title: event.title,
     description: event.description,
-    content: `:alarm_clock: **${event.title}** starting soon!\n:calendar: RSVP here: ${event.link}\n\n`
+    content: `
+      :alarm_clock: **${event.title}** starting soon!\n:calendar: RSVP here: ${event.link}\n\n${event.location ? `:point_right: Join here: ${event.location}` : ``}
+    `
   })
 }
