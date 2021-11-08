@@ -1,9 +1,9 @@
 // fetches upcoming events from addEvent 
 // updates database ('Events' table)
 
-import { fetchTimezones, fetchUpcomingEvents } from "../services/addEvent";
-import { syncEvents, syncTimezones } from '../services/database';
-import { sendUpdate } from "../services/discord";
+import { fetchTimezones, fetchUpcomingEvents } from "./addEvent";
+import { syncEvents, syncTimezones } from './database';
+import { sendUpdate } from "./discord";
 
 export const fetchAndSyncTimezones = async () => {
   const tzArray = await fetchTimezones();

@@ -9,7 +9,7 @@ export const markAsPosted = (id: string) => {
 }
 
 // return event object for all events in the next hour
-export const getNextEvent = () => {
+export const getNextEvent = ({ calendar }: { calendar: string | undefined }) => {
   const now = new Date();
   let xMinutesFromNow: Date = new Date();
   xMinutesFromNow.setMinutes(xMinutesFromNow.getMinutes() + Number(Config.eventSyncInterval));
@@ -26,6 +26,9 @@ export const getNextEvent = () => {
           postOnDiscord: {
             equals: false
           }
+        },
+        {
+          calendarId: calendar
         }
       ]
     }

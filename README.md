@@ -35,5 +35,5 @@ $ ts-node start
 #### build and deploy
 ```
 $ tsc
-$ node dist/start
+$ node dist/tasks/sync
 ```
